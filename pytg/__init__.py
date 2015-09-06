@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 
 
 __all__ = ["receiver", "sender", "Telegram"]
-VERSION = "0.4.1d"
 
 class Telegram(object):
 	"""

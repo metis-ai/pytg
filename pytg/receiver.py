@@ -209,6 +209,7 @@ class Receiver(object):
 		if not isinstance(function, GeneratorType):
 			raise TypeError('Target must be GeneratorType')
 		try:
+			function.send(None)
 			while not self._do_quit:
 				self._new_messages.acquire() # waits until at least 1 message is in the queue.
 				with self._queue_access:

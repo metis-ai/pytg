@@ -353,7 +353,7 @@ class Sender(object):
 				raise AttributeError("reply_id keyword argument is not integer.")
 			reply_part = "[reply=%i]" % reply_id
 		preview_part = "[enable_preview]" if enable_preview else "[disable_preview]"
-		arg_string = " ".join([u(x) for x in args])
+		arg_string = " ".join([str(u(x)) for x in args])
 		request = " ".join([reply_part, preview_part, cli_command,  arg_string])
 		request = "".join([request, "\n"]) #TODO can this be deleted?
 		result = self._do_send(request, answer_timeout=answer_timeout, retry_connect=retry_connect)
